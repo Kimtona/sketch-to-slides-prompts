@@ -1,10 +1,7 @@
-# Iteration Summary — Sketch-to-Slides (personal reference)
+# Iteration Summary — Sketch-to-Slides
 
-English translation of [`ITERATION_SUMMARY.md`](ITERATION_SUMMARY.md) (the Korean original is kept unchanged).
-
-These are notes for writing the **Iteration Process** section of the report. For the verbatim prompts and their numbers (P01…), see [`PROMPT_LOG.md`](PROMPT_LOG.md).
+This summary describes how Sketch-to-Slides was developed through successive prompts. For the verbatim prompts and their numbers (P01…), see [`PROMPT_LOG.md`](PROMPT_LOG.md).
 Times are KST (2026-11-06); commits refer to the `math-slides` repository. Results and numbers are only the real values recorded in the development log (`docs/SKETCH_DEVLOG.md`, `examples/composite/measurements/`).
-This document is a working note, not a submission document (the list of verbatim prompts is `PROMPT_LOG.md`).
 
 ## Overview
 
@@ -50,7 +47,7 @@ Timeline: first implementation commit 00:45 (before the first prompt in this log
 
 ### P09 · Investigation (no code changes): moving inside an equation and partial selection
 - **Purpose:** Investigation only, as the token limit was near. Locate the old feature of "moving inside an equation with the arrow keys, selecting part of it, and changing its color".
-- **Result:** Confirmed that the feature exists nowhere in this account's code or git history (an equation is a single `atom` node; clicking it opens a LaTeX popup), and wrote it up as an investigation note (`docs/MATH_CURSOR_INVESTIGATION.md`, a personal note not committed to the repository). Then found an implementation in the collaborator's account and ported it in P10.
+- **Result:** Confirmed that the feature exists nowhere in this account's code or git history (an equation is a single `atom` node; clicking it opens a LaTeX popup), and wrote it up as an investigation note (`docs/MATH_CURSOR_INVESTIGATION.md`, a local note not committed to the repository). Then found an implementation in the collaborator's account and ported it in P10.
 
 ### P10–P12 · Porting the partial equation coloring developed in another account
 - **Purpose:** Bring two commits from the collaborator's account (`51a5129` symbol selection and partial color, `af41278` selection stabilization) into the current Sketch-to-Slides tree (P10), continue the work interrupted by the usage limit (P11), and reflect it in main once tests passed (P12).
@@ -100,9 +97,9 @@ Timeline: first implementation commit 00:45 (before the first prompt in this log
 - **P30:** Publication approved → v2.0.0 Release published (draft: false, Latest); the tag stays at `0af9adf`.
 
 ### P31 · Prompt-log repository
-- **Purpose:** Organize the verbatim prompt list and a personal summary in a separate public repository for submission (the request to write this document).
+- **Purpose:** Organize the verbatim prompt list and an iteration summary in a separate public repository for submission (the request to write this document).
 
-## Flow usable for the report's Iteration Process
+## Iteration process at a glance
 
 1. **Implementation → gap with reality:** After the initial implementation, connecting a real model (P01) exposed coordinate drift, repeated output, and LaTeX corruption, each fixed with a unit-testable correction (rescaling, salvage, escape repair).
 2. **Measurement-driven improvement:** Broke "it is slow" down into token count and speed (1,481 tokens ≈ 215–245 s) and cut it to 35 s by changing the output format (JSON + coordinates → Markdown, 176 tokens) (P20→P21). The prompt-cache effect on repeated runs of the same image is reported separately.
