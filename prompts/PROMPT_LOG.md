@@ -1,17 +1,17 @@
 # Prompt Log — Sketch-to-Slides (MathSlides)
 
-AI Automation 과제 제출용 프롬프트 기록입니다. Claude Code 세션 기록(`~/.claude/projects/.../*.jsonl`)에서 **사용자가 직접 입력한(또는 붙여넣은) 메시지의 원문**을 시간순으로 옮겼습니다.
+This is the prompt log submitted for the AI Automation assignment. It reproduces, in chronological order, the **verbatim text of the messages the user typed (or pasted)** into Claude Code, taken from the Claude Code session records (`~/.claude/projects/.../*.jsonl`).
 
-## 기록 방식
+## How this log was made
 
-- **원문 그대로** 옮겼습니다. 요약·재작성·번역·맞춤법 수정을 하지 않았습니다. 프롬프트 번호(P01…)와 구분 제목만 이 문서가 붙인 것입니다.
-- 시간은 한국 시간(KST, UTC+9)입니다. 세션 기록의 원래 시각(UTC)은 각 항목에 함께 적었습니다. 기간: 2026-11-06 00:58 ~ 22:37 KST.
-- 정렬: 입력 시각 순. 단계(초기 구현 / 오류 수정 / 반복 개선 / 최종 검증)는 각 프롬프트의 주된 목적으로 나눴습니다.
-- `<pasted_content id="…">` … `</pasted_content …>` 태그는 Claude Code가 **붙여넣은 입력**에 자동으로 붙이는 표시입니다(원문의 일부로 그대로 남겼습니다). 이 기록만으로는 붙여넣은 글을 어디서 썼는지(예: ChatGPT에서 작성)를 알 수 없습니다. 붙여넣기로 들어온 긴 프롬프트에는 `붙여넣기` 표시를 했으며, ChatGPT에서 작성한 것은 제출 전에 직접 확인해 표시해 주세요.
-- `[Image #n]`은 당시 첨부한 이미지의 자리 표시입니다. 이미지 자체는 기록에 남아 있지 않습니다.
-- **제외한 것:** 도구 실행 결과, 자동 알림(`<task-notification>`), 사용량 한도 해제 자동 안내, 컨텍스트 압축 요약("This session is being continued…"), 슬래시 명령(`/model`, `/login`)과 그 출력, AI의 질문 대화상자 응답(거절), 다른 프로젝트(SKKAI 문서, alido 분석, lidar 등) 세션.
-- **개인정보 처리:** 협업자(타인)의 이름과 그 계정의 홈 폴더명만 `[이름 삭제됨]`, `/Users/[다른 계정]`으로 가렸습니다(P10, P11). 그 외 텍스트는 수정하지 않았습니다.
-- 수집한 프롬프트: **31개**, 세션 2개 (아래 "출처" 참고).
+- **Verbatim.** Prompts are reproduced as they were entered: no summarizing, rewriting, translating, or spelling correction. Only the prompt numbers (P01…) and the section headings were added by this document.
+- Times are Korean Standard Time (KST, UTC+9). The original timestamp from the session record (UTC) is given with each entry. Period covered: 2026-11-06 00:58 – 22:37 KST.
+- Order: by input time. The prompts are grouped into stages (initial implementation / bug fixing / iterative improvement / final verification) by each prompt's main purpose.
+- The `<pasted_content id="…"> … </pasted_content …>` tags are added automatically by Claude Code around **pasted input** and are kept as part of the original text. The record alone does not show where a pasted text was written (for example, in ChatGPT). Long prompts that arrived as pasted input are marked `붙여넣기` (pasted); please mark the ones written in ChatGPT yourself before submitting.
+- `[Image #n]` is a placeholder for an image attached at the time. The images themselves are not preserved in the record.
+- **Excluded:** tool results, automatic notifications (`<task-notification>`), the automatic notice that the usage limit had reset, context-compaction summaries ("This session is being continued…"), slash commands (`/model`, `/login`) and their output, responses to the AI's question dialogs (declined), and sessions of other projects (SKKAI documents, alido analysis, lidar, etc.).
+- **Personal information:** only a collaborator's name (a third party) and the home-folder name of that account were masked, as `[이름 삭제됨]` ("[name removed]") and `/Users/[다른 계정]` ("[other account]") (P10, P11). No other text was modified.
+- Prompts collected: **31**, from 2 sessions (see "출처" below).
 
 ## 출처 (세션 기록)
 
